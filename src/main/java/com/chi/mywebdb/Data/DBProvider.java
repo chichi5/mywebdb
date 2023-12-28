@@ -1,5 +1,5 @@
 package com.chi.mywebdb.Data;
-import com.chi.mywebdb.model.Orders;
+import com.chi.mywebdb.model.Orders_Demo;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -20,19 +20,19 @@ public class DBProvider {
         }
     }
 
-    public List<Orders> getOrderData(String sql ) {
+    public List<Orders_Demo> getOrderData(String sql ) {
         Connection con = null;
         Statement stmt = null;
         ResultSet rs = null;
 
-        List<Orders> orders = new ArrayList<>();
+        List<Orders_Demo> orders = new ArrayList<>();
         try {
             con = DriverManager.getConnection("jdbc:mariadb://localhost/classicmodels","root","12345");
             stmt = con.createStatement();
             rs = stmt.executeQuery(sql);
 
             while(rs.next()) {
-                Orders o = new Orders();
+                Orders_Demo o = new Orders_Demo();
                 o.setOrderNumber( rs.getInt("orderNumber"));
                 o.setOrderDate( rs.getDate("orderDate"));
                 o.setRequiredDate(rs.getDate("requiredDate"));

@@ -6,11 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import com.chi.mywebdb.model.Orders;
+import com.chi.mywebdb.model.Orders_Demo;
 
 
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -36,7 +35,7 @@ public class ReportController {
     public String getOrderList(Model model) {
         // 提供一個訂單總覽  點選其中一筆 在顯示 訂單明細
         ResultSet rs = null;
-        List<Orders> orders;
+        List<Orders_Demo> orders;
         String sql = """
                 SELECT
                   orders.orderNumber,
