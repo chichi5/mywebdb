@@ -42,10 +42,10 @@
     </tr>
     <tr th:each="order  : ${orders}">
         <td th:text="${order.getOrderNumber()}"></td>
-        <td th:text="${order.getOrderDate()}">Maria Anders</td>
-        <td th:text="${order.getRequiredDate()}">Germany</td>
-        <td th:text="${order.getComments()}">Germany</td>
-        <td th:text="${order.getCompanyName()}">Germany</td>
+        <td th:text="${order.getOrderDate()}"></td>
+        <td th:text="${order.getRequiredDate()}"></td>
+        <td th:text="${order.getComments()}"></td>
+        <td th:text="${order.getStatus()}"></td>
     </tr>
 </table>
 

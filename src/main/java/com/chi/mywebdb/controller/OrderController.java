@@ -15,7 +15,7 @@ public class OrderController {
     @GetMapping("/order_all")
     public String getAll(Model model) {
         model.addAttribute("orders", orderService.getAll());
-        return "orders_list";
+        return "order_List";
     }
 
     @GetMapping("/order_by_customer")
@@ -27,13 +27,13 @@ public class OrderController {
         }
 
         model.addAttribute("orders", orderService.getOrderByCustomerNumber(cno2));
-        return "orders_list";
+        return "order_List";
 
     }
     @GetMapping("/order_by_no")
     public String getByCustomer(Model model, @RequestParam int ono) {
         model.addAttribute("orders", orderService.getOrderById(ono));
-        return "orders_list";
+        return "order_List";
 
     }
     @GetMapping("/qc")
